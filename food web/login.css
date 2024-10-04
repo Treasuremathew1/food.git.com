@@ -1,0 +1,209 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background-image: linear-gradient(rgba(0,0,0,0.50), rgba(0,0,0,0.50)),url(food.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+header{
+    position: fixed;
+    display: block;
+    background: rgba(0,0,0,0.50);
+    backdrop-filter: blur(5px);
+    width: 100%;
+    z-index: 100;
+}
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+.nav .logo{
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.nav .logo:hover{
+    color: red;
+    text-shadow: 5px 10px 30px red;
+    transform: translateY(-5px);
+    transition: 0.5s;
+}
+.navbar{
+    display: flex;
+    gap: 30px;
+    font-size: 20px;
+}.navbar a{
+    color: white;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+.navbar a:hover,
+.navbar a.active{
+    color: red;
+    transition: 0.4s ease;
+}
+#menu-icon{
+    font-size: 2rem;
+    border: 2px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    display: none;
+    padding: 10px;
+}
+
+.navbar .btn{
+    width: 100px;
+    height: 40px;
+    margin-top: -5px;
+    background: transparent;
+    border-radius: 5px;
+    border: 2px solid rgb(238, 229, 229);
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transform: scale(1.2) translate(-5px);
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
+.navbar .btn::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    background: red;
+    width: 0;
+    height: 40px;
+    border-radius: 5px;
+    z-index: -1;
+    transition: 0.5s initial;
+}
+.navbar .btn:hover{
+    transform: translateY(-5px);
+    transition: 0.5s;
+}
+.navbar .btn:hover::before{
+    background: red;
+    color: white;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+.login-container{
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin-left: 42rem;
+}
+.container{
+    position: absolute;
+    background: red;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    transform: scale(0);
+    transition: 0.4s;
+}
+.container.active{
+    transform: scale(1);
+    transition: 0.4s;
+}
+.container a{
+    color: black;
+}
+.container i{
+    background: blue;
+    color: white;
+    border-radius: 10%;
+    padding: 10px;
+}
+.login-form input{
+    width: 250px;
+    padding: 20px 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 0;
+    font-size: 1rem;
+}
+::placeholder{
+    color: black;
+}
+.login-box a{
+    color: black;
+}
+.login-btn{
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+}
+
+
+
+
+@media (max-width: 765px){
+    .navbar{
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        background: rgba(0,0,0,0.50);
+        box-shadow: 3px 3px 10px rgba(254, 252, 252, 0.5);
+        width: 100%;
+        padding: 10px;
+        gap: 50px;
+        text-align: center;
+        flex-direction: column;
+        display: none;
+    }
+    .navbar a{
+        font-size: 1.5rem;
+        color: white;
+        transform: scale(1.3) translate(-5px);
+    }
+    .navbar a:hover{
+        color: black;
+        transition: 0.4s ease;
+        transform: scale(1.3) translate(-10px);
+    }
+    #menu-icon{
+        display: flex;
+        border: 2px solid white;
+        color: white;
+    }
+    #menu-icon:hover{
+        transform: scale(1.3) translate(-5px);
+    }
+    .navbar.active{
+        display: flex;
+    }
+    .login-container{
+        margin-left: 150px;
+        margin-top: 300px;
+    }
+    .container{
+        margin-left: 120px;
+    }
+    .navbar .btn{
+        margin-left: 300px;
+    }
+    .login-container{
+        margin-left: 300px;
+        margin-top: 10px;
+    }
+}
